@@ -1,0 +1,43 @@
+{
+  "name": "balt1794/alt-text-generator-ai",
+  "description": "Write SEO-friendly alt text for the images in your Shopware media library, in bulk or automatically on upload.",
+  "type": "shopware-platform-plugin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://alttextgeneratorai.com/integrations/shopware-plugin",
+  "authors": [
+    {
+      "name": "Bryam Loaiza",
+      "homepage": "https://alttextgeneratorai.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "shopware/core": "~6.7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AltTextGeneratorAI\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "AltTextGeneratorAI\\AltTextGeneratorAI",
+    "label": {
+      "en-GB": "Alt Text Generator AI",
+      "de-DE": "Alt Text Generator AI"
+    },
+    "description": {
+      "en-GB": "Write SEO-friendly alt text for your media library images with AI. Generate it in bulk or automatically on upload, in 131 languages, and review it before saving.",
+      "de-DE": "Erstellt SEO-freundliche Alternativtexte für Ihre Medienbilder mit KI, gesammelt oder automatisch beim Hochladen, in 131 Sprachen und mit Prüfung vor dem Speichern."
+    },
+    "manufacturerLink": {
+      "en-GB": "https://alttextgeneratorai.com",
+      "de-DE": "https://alttextgeneratorai.com"
+    },
+    "supportLink": {
+      "en-GB": "mailto:support@alttextgeneratorai.com",
+      "de-DE": "mailto:support@alttextgeneratorai.com"
+    },
+    "copyright": "(c) Bryam Loaiza"
+  }
+}

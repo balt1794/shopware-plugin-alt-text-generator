@@ -1,0 +1,141 @@
+{% block alt_text_generator_index %}
+<sw-page class="alt-text-generator-index">
+    {% block alt_text_generator_index_header %}
+    <template #smart-bar-header>
+        <h2 class="alt-text-generator-index__title">
+            <img class="alt-text-generator-index__logo" :src="logo" alt="" width="28" height="28">
+            {{ $tc('alt-text-generator.general.title') }}
+        </h2>
+    </template>
+    {% endblock %}
+
+    {% block alt_text_generator_index_actions %}
+    <template #smart-bar-actions>
+        <sw-button v-if="running" variant="danger" size="small" @click="stopRun">
+            {{ $tc('alt-text-generator.page.stop') }}
+        </sw-button>
+        <sw-button
+            v-else
+            variant="primary"
+            size="small"
+            :disabled="targets.list.length === 0 || !settings.hasApiKey"
+            @click="generate(targets.list)"
+        >
+            {{ targets.label }}
+        </sw-button>
+        <sw-button
+            variant="ghost"
+            size="small"
+            :disabled="changed.length === 0 || saving || running"
+            :is-loading="saving"
+            @click="saveAll"
+        >
+            {{ $tc('alt-text-generator.page.save', changed.length, { count: changed.length }) }}
+        </sw-button>
+    </template>
+    {% endblock %}
+
+    {% block alt_text_generator_index_content %}
+    <template #content>
+        <sw-card-view>
+            <sw-alert v-if="error" variant="error" :closable="false">
+                {{ error }}
+            </sw-alert>
+
+            <sw-alert
+                v-if="!settings.hasApiKey"
+                variant="warning"
+                :closable="false"
+                :title="$tc('alt-text-generator.page.noKeyTitle')"
+            >
+                {{ $tc('alt-text-generator.page.noKeyText') }}
+                <router-link :to="{ name: 'sw.extension.config', params: { namespace: 'AltTextGeneratorAI' } }">
+                    {{ $tc('alt-text-generator.page.openSettings') }}
+                </router-link>
+            </sw-alert>
+
+            <sw-card :title="$tc('alt-text-generator.page.settings')" position-identifier="alt-text-generator-settings">
+                <div class="alt-text-generator-index__settings">
+                    <sw-single-select
+                        class="alt-text-generator-index__language"
+                        :label="$tc('alt-text-generator.page.language')"
+                        :options="languages"
+                        :value="settings.language"
+                        :show-clearable-button="false"
+                        @update:value="(value) => saveSettings({ language: value })"
+                    />
+
+                    <div class="alt-text-generator-index__credits">
+                        <span>{{ $tc('alt-text-generator.page.credits') }}</span>
+                        <strong>{{ credits === null ? '—' : credits }}</strong>
+                    </div>
+                </div>
+
+                <sw-checkbox-field
+                    :value="settings.autoGenerate"
+                    :label="$tc('alt-text-generator.page.autoGenerate')"
+                    @update:value="(value) => saveSettings({ autoGenerate: value })"
+                />
+            </sw-card>
+
+            <div class="alt-text-generator-index__filters">
+                <sw-button size="small" :disabled="loading || running" @click="scan">
+                    {{ $tc('alt-text-generator.page.scan') }}
+                </sw-button>
+                <sw-button size="small" :variant="filter === 'missing' ? 'primary' : null" @click="setFilter('missing')">
+                    {{ $tc('alt-text-generator.page.missing', counts.missing, { count: counts.missing }) }}
+                </sw-button>
+                <sw-button size="small" :variant="filter === 'all' ? 'primary' : null" @click="setFilter('all')">
+                    {{ $tc('alt-text-generator.page.all', counts.images, { count: counts.images }) }}
+                </sw-button>
+                <sw-checkbox-field
+                    v-model:value="overwrite"
+                    :label="$tc('alt-text-generator.page.overwrite')"
+                />
+            </div>
+
+            <sw-loader v-if="loading" />
+
+            <sw-card v-else-if="images.length === 0" position-identifier="alt-text-generator-empty">
+                {{ emptyMessage }}
+            </sw-card>
+
+            <template v-else>
+                <sw-card
+                    v-for="image in images"
+                    :key="image.id"
+                    class="alt-text-generator-index__row"
+                    position-identifier="alt-text-generator-row"
+                >
+                    <div class="alt-text-generator-index__image">
+                        <sw-checkbox-field
+                            :value="selected.includes(image.id)"
+                            @update:value="toggle(image.id)"
+                        />
+                        <img class="alt-text-generator-index__thumb" :src="image.url" alt="" width="72" height="72" loading="lazy">
+                        <div class="alt-text-generator-index__text">
+                            <strong>{{ image.name }}</strong>
+                            <sw-textarea-field
+                                :value="valueOf(image)"
+                                :disabled="isWorking(image.id)"
+                                :placeholder="isWorking(image.id) ? $tc('alt-text-generator.page.writing') : $tc('alt-text-generator.page.noAltYet')"
+                                @update:value="(value) => setDraft(image.id, value)"
+                            />
+                            <span v-if="failed[image.id]" class="alt-text-generator-index__failed">{{ failed[image.id] }}</span>
+                        </div>
+                        <sw-button
+                            size="small"
+                            :is-loading="isWorking(image.id)"
+                            :disabled="running || !settings.hasApiKey"
+                            @click="generate([image])"
+                        >
+                            {{ valueOf(image) ? $tc('alt-text-generator.page.regenerate') : $tc('alt-text-generator.page.generate') }}
+                        </sw-button>
+                    </div>
+                </sw-card>
+            </template>
+        </sw-card-view>
+    </template>
+    {% endblock %}
+</sw-page>
+{% endblock %}

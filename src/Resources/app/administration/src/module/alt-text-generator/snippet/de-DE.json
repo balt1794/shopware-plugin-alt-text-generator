@@ -1,0 +1,37 @@
+{
+    "alt-text-generator": {
+        "general": {
+            "title": "Alt Text Generator AI",
+            "description": "Erstellt SEO-freundliche Alternativtexte für die Bilder in Ihrer Medienverwaltung."
+        },
+        "page": {
+            "settings": "Einstellungen",
+            "language": "Sprache des Alternativtexts",
+            "credits": "Verbleibende Credits",
+            "autoGenerate": "Alternativtext beim Hochladen eines Bildes automatisch erstellen",
+            "noKeyTitle": "API-Schlüssel hinzufügen",
+            "noKeyText": "Öffnen Sie die Plugin-Einstellungen und fügen Sie Ihren Schlüssel ein. Einen kostenlosen Schlüssel erhalten Sie auf alttextgeneratorai.com.",
+            "openSettings": "Plugin-Einstellungen öffnen",
+            "scan": "Bilder prüfen",
+            "missing": "Ohne Text ({count})",
+            "all": "Alle ({count})",
+            "overwrite": "Bilder mit vorhandenem Alternativtext überschreiben",
+            "generateMissing": "Alle fehlenden erstellen ({count})",
+            "generateSelected": "Auswahl erstellen ({count})",
+            "stop": "Stopp",
+            "save": "Änderungen speichern ({count})",
+            "generate": "Erstellen",
+            "regenerate": "Neu erstellen",
+            "writing": "Alternativtext wird erstellt…",
+            "noAltYet": "Noch kein Alternativtext",
+            "saved": "Alternativtext für {count} Bild gespeichert | Alternativtext für {count} Bilder gespeichert",
+            "noImages": "In Ihrer Medienverwaltung sind noch keine Bilder.",
+            "allHaveAlt": "Alle Bilder haben einen Alternativtext.",
+            "nothingToShow": "Keine Bilder vorhanden.",
+            "loadError": "Die Bilder konnten nicht geladen werden.",
+            "settingsError": "Die Einstellungen konnten nicht geladen oder gespeichert werden.",
+            "generateError": "Die Erstellung ist fehlgeschlagen.",
+            "saveError": "Die Änderungen konnten nicht gespeichert werden."
+        }
+    }
+}

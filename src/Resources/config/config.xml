@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Alt Text Generator AI</title>
+        <title lang="de-DE">Alt Text Generator AI</title>
+
+        <input-field type="password">
+            <name>apiKey</name>
+            <label>API key</label>
+            <label lang="de-DE">API-Schlüssel</label>
+            <helpText>Get a free key from https://alttextgeneratorai.com/dashboard. The key stays on your server.</helpText>
+            <helpText lang="de-DE">Einen kostenlosen Schlüssel erhalten Sie unter https://alttextgeneratorai.com/dashboard. Der Schlüssel bleibt auf Ihrem Server.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>autoGenerate</name>
+            <label>Write alt text automatically when an image is uploaded</label>
+            <label lang="de-DE">Alternativtext beim Hochladen automatisch erstellen</label>
+            <helpText>Needs the message queue worker to be running, which the administration starts for you by default. Images that already have alt text are not changed.</helpText>
+            <helpText lang="de-DE">Benötigt den Message-Queue-Worker, den die Administration standardmäßig startet. Bilder mit Alternativtext bleiben unverändert.</helpText>
+            <defaultValue>false</defaultValue>
+        </input-field>
+    </card>
+</config>

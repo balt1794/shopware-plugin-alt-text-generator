@@ -1,0 +1,25 @@
+{
+  "base": "/bundles/alttextgeneratorai/administration/",
+  "entryPoints": {
+    "alt-text-generator-a-i": {
+      "css": [
+        "/bundles/alttextgeneratorai/administration/assets/alt-text-generator-a-i-CeSwNZ_m.css"
+      ],
+      "dynamic": [],
+      "js": [
+        "/bundles/alttextgeneratorai/administration/assets/alt-text-generator-a-i-Bf_RkFJ3.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}

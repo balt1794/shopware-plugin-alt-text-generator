@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/alt-text-generator-a-i-Bf_RkFJ3.js",
+    "name": "alt-text-generator-a-i",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/alt-text-generator-a-i-CeSwNZ_m.css"
+    ]
+  }
+}

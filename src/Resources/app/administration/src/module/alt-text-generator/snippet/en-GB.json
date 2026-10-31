@@ -1,0 +1,37 @@
+{
+    "alt-text-generator": {
+        "general": {
+            "title": "Alt Text Generator AI",
+            "description": "Write SEO-friendly alt text for the images in your media library."
+        },
+        "page": {
+            "settings": "Settings",
+            "language": "Language of the alt text",
+            "credits": "Credits left",
+            "autoGenerate": "Write alt text automatically when an image is uploaded",
+            "noKeyTitle": "Add your API key",
+            "noKeyText": "Open the plugin settings and paste your key. You can get a free key at alttextgeneratorai.com.",
+            "openSettings": "Open plugin settings",
+            "scan": "Scan images",
+            "missing": "Missing ({count})",
+            "all": "All ({count})",
+            "overwrite": "Overwrite images that already have alt text",
+            "generateMissing": "Generate all missing ({count})",
+            "generateSelected": "Generate selected ({count})",
+            "stop": "Stop",
+            "save": "Save changes ({count})",
+            "generate": "Generate",
+            "regenerate": "Regenerate",
+            "writing": "Writing alt text…",
+            "noAltYet": "No alt text yet",
+            "saved": "Saved alt text for {count} image | Saved alt text for {count} images",
+            "noImages": "There are no images in your media library yet.",
+            "allHaveAlt": "Every image has alt text.",
+            "nothingToShow": "No images to show.",
+            "loadError": "Could not load your images.",
+            "settingsError": "Could not load or save the settings.",
+            "generateError": "Generation failed.",
+            "saveError": "Could not save the changes."
+        }
+    }
+}
