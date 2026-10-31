@@ -1,8 +1,12 @@
 # Alt Text Generator AI for Shopware
 
+<img src="https://raw.githubusercontent.com/balt1794/shopware-plugin-alt-text-generator/main/assets/logo.png" alt="Alt Text Generator logo" width="64" />
+
 Write SEO-friendly alt text for the images in your Shopware media library. Generate it for one image, for a selection or for every image that is missing it, or automatically when an image is uploaded. 131 languages.
 
 [Get a free API key](https://alttextgeneratorai.com/dashboard)
+
+![The Alt Text Generator AI page in the Shopware administration](https://raw.githubusercontent.com/balt1794/shopware-plugin-alt-text-generator/main/assets/bulk-results.png)
 
 ## What you get
 
@@ -32,7 +36,9 @@ bin/console plugin:install --activate AltTextGeneratorAI
 bin/console cache:clear
 ```
 
-Then add your API key under **Extensions > My extensions > Alt Text Generator AI > Configure**.
+Then add your API key under **Extensions > My extensions > Alt Text Generator AI > Configure** and click **Save**. Leave the sales channel on **All Sales Channels**.
+
+![The plugin settings with the API key field](https://raw.githubusercontent.com/balt1794/shopware-plugin-alt-text-generator/main/assets/settings.png)
 
 If you install from a ZIP file, the administration files are already built. If you install from a Git checkout, run `bin/build-administration.sh` once.
 
@@ -45,6 +51,8 @@ If you install from a ZIP file, the administration files are already built. If y
 5. Read the results, change anything you like, then click **Save changes**.
 
 **Generate all missing** skips images that already have alt text. Tick an image to generate it anyway, or tick **Overwrite images that already have alt text**.
+
+![Images that are missing alt text](https://raw.githubusercontent.com/balt1794/shopware-plugin-alt-text-generator/main/assets/bulk-missing.png)
 
 ### Automatic mode
 
