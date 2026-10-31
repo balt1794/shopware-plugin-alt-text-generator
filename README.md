@@ -25,9 +25,9 @@ Write SEO-friendly alt text for the images in your Shopware media library. Gener
 
 ## Install
 
-From the Shopware Store, open **Extensions > Store** in your administration, search for **Alt Text Generator AI** and install it.
+Download the latest ZIP from the [releases page](https://github.com/balt1794/shopware-plugin-alt-text-generator/releases), then open **Extensions > My extensions** in your administration, click **Upload extension** and activate it.
 
-Or with Composer:
+Or install it with Composer:
 
 ```sh
 composer require balt1794/alt-text-generator-ai
