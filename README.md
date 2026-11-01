@@ -40,7 +40,7 @@ Then add your API key under **Extensions > My extensions > Alt Text Generator AI
 
 ![The plugin settings with the API key field](https://raw.githubusercontent.com/balt1794/shopware-plugin-alt-text-generator/main/assets/settings.png)
 
-If you install from a ZIP file, the administration files are already built. If you install from a Git checkout, run `bin/build-administration.sh` once.
+The administration files are already built and included, so there is nothing to compile.
 
 ## Use it
 
